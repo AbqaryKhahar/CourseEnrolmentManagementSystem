@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "View Report";
+}
+
+<div class="container my-4">
+    <h2 class="text-center mb-4">Report Dashboard</h2>
+
+    <!-- Summary Tables -->
+    <section class="mt-4">
+        <h3 class="text-center mb-3">Summary</h3>
+
+        <div class="row">
+            <!-- Student Summary -->
+            <div class="col-md-6">
+                <h5 class="mb-3">Student Summary</h5>
+                <table class="table table-dark table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Total Courses</th>
+                            <th>GPA</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 1; i <= 5; i++)
+
+                        {
+                            <tr>
+                                <td>@i</td>
+                                <td>Student @i</td>
+                                <td>@(3 + i)</td>
+                                <td>@(3.0 + i * 0.1)</td>
+                                <td>Active</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Course Summary -->
+            <div class="col-md-6">
+                <h5 class="mb-3">Course Summary</h5>
+                <table class="table table-dark table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Course Name</th>
+                            <th>Enrolled Students</th>
+                            <th>Completion Rate</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 1; i <= 5; i++)
+
+                        {
+                            <tr>
+                                <td>@i</td>
+                                <td>Course @i</td>
+                                <td>@(20 + i * 5)</td>
+                                <td>@(80 + i * 2)%</td>
+                                <td>Ongoing</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</div>

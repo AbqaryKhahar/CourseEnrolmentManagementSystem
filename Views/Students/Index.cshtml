@@ -1,0 +1,33 @@
+﻿@model IEnumerable<StudentManagementAPI.Models.Student>
+
+<h2>Students List</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Student Number</th>
+            <th>Student Name</th>
+            <th>Student Email</th>
+            <th>Student Contact Number</th>
+            <th>Student Enrollment Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.StudentNo</td>
+                <td>@student.StudentName</td>
+                <td>@student.StudentEmail</td>
+                <td>@student.StudentContactNumber</td>
+                <td>@student.StudentEnrollmentDate.ToShortDateString()</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@student.StudentID">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@student.StudentID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create">Add New Student</a>
